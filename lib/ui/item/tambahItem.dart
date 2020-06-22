@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:ta_andypos/style/theme.dart' as Theme;
 import 'package:ta_andypos/components/TextFields/inputField.dart';
 // import 'package:ta_andypos/theme/style.dart';
@@ -169,6 +168,34 @@ class _AddItemPageState extends State<AddItemPage>
       children: <Widget>[
         Image.file(image, width:300, height: 200,),
       ],
+    );
+  }
+   SpeedDial buildSpeedDial() {
+    return SpeedDial(
+      animatedIcon: AnimatedIcons.menu_close,
+      animatedIconTheme: IconThemeData(size: 22.0),
+      // child: Icon(Icons.add),
+      onOpen: () => print('OPENING DIAL'),
+      onClose: () => print('DIAL CLOSED'),
+      curve: Curves.bounceIn,
+      children: [
+        SpeedDialChild(
+          child: Icon(Icons.image, color: Colors.white),
+          backgroundColor: Colors.blueAccent[50],
+          onTap: () => _getImage(),
+          label: 'Add Image',
+          labelStyle: TextStyle(fontWeight: FontWeight.w500),
+          labelBackgroundColor: Colors.white,
+        ),
+        SpeedDialChild(
+          child: Icon(Icons.settings_overscan, color: Colors.white),
+          backgroundColor: Colors.blueAccent[50],
+          onTap: () => _scanStok(),
+          label: 'Scan Barcode',
+          labelStyle: TextStyle(fontWeight: FontWeight.w500),
+          labelBackgroundColor: Colors.white,
+        ),
+        ],
     );
   }
 
@@ -339,73 +366,16 @@ class _AddItemPageState extends State<AddItemPage>
             ),
           ),
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed:()=> _getImage(),
-        //   tooltip: 'Increment',
-        //   child: Icon(Icons.photo_library),
-        // ),
-        floatingActionButton:  SpeedDial(
-          // both default to 16
-          marginRight: 18,
-          marginBottom: 20,
-          animatedIcon: AnimatedIcons.menu_close,
-          animatedIconTheme: IconThemeData(size: 22.0),
-          // this is ignored if animatedIcon is non null
-          // child: Icon(Icons.add),
-          // visible: _dialVisible,
-          // If true user is forced to close dial manually 
-          // by tapping main button and overlay is not rendered.
-          closeManually: false,
-          curve: Curves.bounceIn,
-          overlayColor: Colors.black,
-          overlayOpacity: 0.5,
-          onOpen: () => print('OPENING DIAL'),
-          onClose: () => print('DIAL CLOSED'),
-          tooltip: 'Speed Dial',
-          heroTag: 'speed-dial-hero-tag',
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-          elevation: 8.0,
-          shape: CircleBorder(),
-          children: [
-            SpeedDialChild(
-              child: Icon(Icons.image),
-              backgroundColor: Colors.blueAccent[50],
-              label: 'Add Image',
-              labelStyle: TextStyle(fontSize: 18.0),
-              onTap: () => _getImage()
-            ),
-            SpeedDialChild(
-              child: Icon(Icons.settings_overscan),
-              backgroundColor: Colors.yellow[200],
-              label: 'Scan Barcode',
-              labelStyle: TextStyle(fontSize: 18.0),
-              onTap: () => _scanStok()
-            ),
-          ],
-        ),
+        floatingActionButton:  buildSpeedDial()
         );
   }
-  /*  void _handleSubmitted(String text) {
-    *//*  _formKeyBusiness.currentState.reset();*//*
-    }*/
 
     void deleteImage(image){
       image=null;
     }
     @override
     void dispose() {
-  /*    myFocusNodePassword.dispose();
-      myFocusNodeEmail.dispose();
-      myFocusNodeName.dispose();
-      _pageController?.dispose();*/
-      /* _formKeyBusiness.currentState.dispose();*/
       image=null;
-      // itemNameController.clear();
-      // sellingPriceController.clear();
-        // _qty=int.tryParse(qtyController.text);
-        // _supplierPrice=int.tryParse(supplierPriceController.text);
-        // _sellingPrice=int.tryParse(sellingPriceController.text);
       super.dispose();
     }
  

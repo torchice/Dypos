@@ -15,7 +15,6 @@ import '../drawerBar.dart';
 // import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 // import 'master_item.dart';
 
@@ -129,15 +128,6 @@ class _AddStokPageState extends State<AddStokPage>
   final FocusNode myFocusNodeOwner = FocusNode();
   final FocusNode myFocusNodeAddress = FocusNode();
   final FocusNode myFocusNodePhone = FocusNode();
-  String _counter, _value;
-
-   Future _scanStok() async{
-    _counter = await FlutterBarcodeScanner.scanBarcode("#004297", "Cancel", true, ScanMode.DEFAULT);
-
-    setState(() {
-     _value=_counter; 
-    });
-  }
   
   Widget build(BuildContext context) {
 

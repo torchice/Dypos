@@ -63,9 +63,9 @@ class _ArticleDescription extends StatelessWidget {
   //docID adalah docID dari item yang dipilih;
 
   addDataRetur(title,pcs,stok) async{
-    int _qty = int.tryParse(pcs);
-    print("asdasd");
-    print(title);
+    // int _qty = int.tryParse(pcs);
+    // print("asdasd");
+    // print(title);
     // var userQuery = await db.collection('owner').document(idUser).collection('item').where('id_item', isEqualTo: ).getDocuments();
 
     // if(userQuery.documents.isNotEmpty){
@@ -78,14 +78,14 @@ class _ArticleDescription extends StatelessWidget {
     //   print(idUser);
     //   return "empty";
     // }
-    //title diisi docID dari header_trans
-    //pcs adalah variabel untuk quantitiy
-    //sedangkan untuk 
+    // // title diisi docID dari header_trans
+    // // pcs adalah variabel untuk quantitiy
+    // // sedangkan untuk 
     // int _priceItem;
     // await takeItemDesc(docID);
     // int hargaPcs=sellingPrice;
     // int _subTotal=_qty*hargaPcs;
-    //qty adalah quantity yg dibeli, sedangkan stok adalah jumlah stok yang tersisa.
+    // //qty adalah quantity yg dibeli, sedangkan stok adalah jumlah stok yang tersisa.
     
     // await Firestore.instance.collection('owner').document(idUser).collection('cart_header').add({
     //     'id_header': title,

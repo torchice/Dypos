@@ -220,7 +220,6 @@ print('Running on ${androidInfo.model}');  // e.g. "Moto G (4)"
   }
 
   int _selectedIndex = 0;
-static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
 void _onItemTapped(int index) {
   setState(() {
@@ -244,6 +243,8 @@ void _onItemTapped(int index) {
   }
 }
 
+
+
   Widget build(BuildContext context) {
     
     Size screenSize = MediaQuery.of(context).size;
@@ -253,9 +254,7 @@ void _onItemTapped(int index) {
           title: Text('DYPOS POINT OF SALE',
           style: TextStyle(
             fontSize: 20,
-     
           ),),
-          
      ),body:Container(
        
     // Size screenSize = MediaQuery.of(context).size;
@@ -294,19 +293,15 @@ void _onItemTapped(int index) {
                             builder: (context, snapshot){
                                 if(!snapshot.hasData){return CircularProgressIndicator();}
                                 if(snapshot.data.documents.length>0){
-                                    return CachedNetworkImage(
-                                      placeholder: (context, url) => CircularProgressIndicator(),
-                                      imageUrl: snapshot.data.documents[0].data["item_photo"],
-                                      imageBuilder: (context, imageProvider) => Container(
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: imageProvider,
-                                          ),
-                                        ),
-                                        height: 400,
-                                        width: 400,
-                                    ),
-                                  );
+                                    return   CachedNetworkImage(
+                                progressIndicatorBuilder: (context, url, progress) =>
+                                    CircularProgressIndicator(
+                                  value: progress.progress,
+                                ),
+                                imageUrl:
+                                    snapshot.data.documents[0].data["item_photo"],
+                              );
+
                                   }else{
                                     return Container(
                                         child: new Image.asset('assets/item.png'),
@@ -332,7 +327,6 @@ void _onItemTapped(int index) {
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           title: Text('Home'),
-          
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.settings_input_component),

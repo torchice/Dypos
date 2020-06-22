@@ -46,9 +46,6 @@ class MyInheritedWidget extends InheritedWidget {
   // }
   // static MyInheritedWidget of(BuildContext context) => context.inheritFromWidgetOfExactType(MyInheritedWidget);
 
-  static MyInheritedWidget of(BuildContext context) {
-    return context.inheritFromWidgetOfExactType(MyInheritedWidget) as MyInheritedWidget;
-  }
 }
 
 // class SupplierData {

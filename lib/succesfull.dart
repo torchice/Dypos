@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/material.dart' as prefix0;
 // import 'package:ta_andypos/style/theme.dart' as Theme;
 import 'package:flutter/cupertino.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+// import 'package:qr_flutter/qr_flutter.dart';
 import 'ui/transaksi.dart';
 // import 'package:ping_discover_network/ping_discover_network.dart';
 import 'package:flutter/services.dart';
@@ -151,13 +151,13 @@ class _SucesfullPagePrintState extends State<SucesfullPagePrint> {
     // });
     
   }
-  Widget _text(BuildContext context){
-    return QrImage(
-      data: "asd",
-      size: 200,
-      backgroundColor: Colors.white,
-    );
-  }
+  // Widget _text(BuildContext context){
+  //   return QrImage(
+  //     data: "asd",
+  //     size: 200,
+  //     backgroundColor: Colors.white,
+  //   );
+  // }
   
 
 

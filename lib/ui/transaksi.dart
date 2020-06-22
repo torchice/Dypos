@@ -7,7 +7,7 @@ import 'package:ta_andypos/style/theme.dart' as Theme;
 import 'package:ta_andypos/ui/drawerBar.dart';
 import 'cart.dart';
 import 'home.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+// import 'package:qr_flutter/qr_flutter.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 // import 'detailScreen.dart';
 

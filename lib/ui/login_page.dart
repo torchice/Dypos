@@ -221,7 +221,7 @@ class _LoginPageState extends State<LoginPage>
         children: <Widget>[
           Stack(
             alignment: Alignment.topCenter,
-            overflow: Overflow.visible,
+    
             children: <Widget>[
               Card(
                 elevation: 2.0,
@@ -366,7 +366,7 @@ class _LoginPageState extends State<LoginPage>
         children: <Widget>[
           Stack(
             alignment: Alignment.topCenter,
-            overflow: Overflow.visible,
+     
             children: <Widget>[
               Card(
                 elevation: 2.0,
