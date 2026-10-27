@@ -221,7 +221,7 @@ class _ShowTransState extends State<ShowTrans>{
                                       subtitle:
                                         // Text("Nama: ${snapshot.data.documents[index].data['nama_member']}"),
                                         snapshot.data.documents[index].data['status_bayar'] ?
-                                         Text("Sucess"): Text("Fail")
+                                         Text("Success"): Text("Fail")
                                     
                                         // trailing: Text(snapshot.data.documents[index].data['supplier_address']),
                                     ),
